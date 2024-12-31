@@ -18,6 +18,9 @@ Enhanced reusability: ViewModels can be reused across different Views, promoting
 Improved developer experience: MVVM can lead to a more organized and maintainable codebase, making it easier for developers to work on the project.
 A new Flutter project.
 
+## Feature
+when click done (in textfield) then focus auto move to the next textfield
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
