@@ -21,6 +21,10 @@ A new Flutter project.
 ## Feature
 when click done (in textfield) then focus auto move to the next textfield
 
+## For API Testing
+https://reqres.in/
+
+view_model communicate with view. view call view_model class
 ## Getting Started
 
 This project is a starting point for a Flutter application.

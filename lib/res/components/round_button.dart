@@ -24,7 +24,7 @@ class RoundButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)
         ),
         // loading a thakle circular progress dekhabe
-        child: Center(child: loading ? CircularProgressIndicator() : Text(title,style: TextStyle(
+        child: Center(child: loading ? CircularProgressIndicator(color: Colors.white,) : Text(title,style: TextStyle(
           color: AppColors.whiteColor
         ),)),
       ),

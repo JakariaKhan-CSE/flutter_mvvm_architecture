@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_architecture/repository/auth_repository.dart';
 import 'package:mvvm_architecture/res/components/round_button.dart';
 import 'package:mvvm_architecture/utils/routes/routes_name.dart';
 import 'package:mvvm_architecture/utils/utils.dart';
+import 'package:mvvm_architecture/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -37,6 +40,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    final authViewModel = Provider.of<AuthViewModel>(context);  // important
     return Scaffold(
       appBar: AppBar(title: Text('Login'),centerTitle: true,elevation: 20,),
       body: SafeArea(child:
@@ -85,7 +89,7 @@ class _LoginViewState extends State<LoginView> {
               },),
 
           SizedBox(height: 20,),
-          RoundButton(title: 'Button',onPressed: (){
+          RoundButton(title: 'Button',loading: authViewModel.loading,onPressed: (){
             if(_emailControler.text.isEmpty)
               {
                 Utils.snackBarMessage(context, 'Please enter email');
@@ -99,6 +103,14 @@ class _LoginViewState extends State<LoginView> {
               Utils.snackBarMessage(context, 'Please enter 6 digit password');
             }
             else{
+               // this data get from (https://reqres.in/)
+              Map data = {
+                "email": "eve.holt@reqres.in",
+                "password": "cityslicka"
+              };
+
+              // call view_model for triggering login function
+              authViewModel.loginApi(data, context);
               print('API hit');
             }
           },)

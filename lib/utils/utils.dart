@@ -9,6 +9,6 @@ class Utils {
 
   static snackBarMessage(BuildContext context, String msg) {
     ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(msg)));
+        .showSnackBar(SnackBar(content: Text(msg),backgroundColor: Colors.deepPurple,));
   }
 }
